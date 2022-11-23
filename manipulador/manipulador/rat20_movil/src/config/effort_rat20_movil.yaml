@@ -1,0 +1,76 @@
+# controller_joint_names: ['', 'eje1', 'eje2', 'eje3', 'eje4', 'eje5', ]
+rat20_movil:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 125  
+  
+  # Position Controllers ---------------------------------------
+ 
+  joint1_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint1
+
+  joint2_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint2
+
+  joint3_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint3
+
+  joint4_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint4
+
+  joint5_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint5
+
+  joint6_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint6
+
+  joint7_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint7
+
+  joint8_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint8
+
+  joint9_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint9
+
+  joint10_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint10
+
+  joint11_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint11
+
+  joint12_effort:
+    type: effort_controllers/JointEffortController
+    joint: joint12
+
+  jointIzqF_effort:
+    type: effort_controllers/JointEffortController
+    joint: ejeIzqF
+
+  jointDerF_effort:
+    type: effort_controllers/JointEffortController
+    joint: ejeDerF
+
+  jointIzqT_effort:
+    type: effort_controllers/JointEffortController
+    joint: ejeIzqT
+
+  jointDerT_effort:
+    type: effort_controllers/JointEffortController
+    joint: ejeDerT
+
+  jointBase_effort:
+    type: effort_controllers/JointEffortController
+    joint: ejeBase

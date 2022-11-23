@@ -1,0 +1,8 @@
+prefix=/home/kleber/manipulador/rat20_movil/install
+
+Name: rat20_movil
+Description: Description of rat20_movil
+Version: 0.3.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

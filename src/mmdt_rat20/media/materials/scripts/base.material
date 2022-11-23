@@ -1,0 +1,29 @@
+material rat20/FlorMaterial
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture figuraFlor.png
+                scale 1 1
+            }
+        }   
+    }
+}
+
+material rat20/OchoMaterial
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture figuraOcho.png
+                scale 1 1
+            }
+        }   
+    }
+}

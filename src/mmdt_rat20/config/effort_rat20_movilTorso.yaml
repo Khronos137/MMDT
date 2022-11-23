@@ -1,0 +1,32 @@
+# controller_joint_names: ['', 'eje1', 'eje2', 'eje3', 'eje4', 'eje5', ]
+mmdt_rat20:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+  
+  # Position Controllers ---------------------------------------
+  jointIzqF_effort:
+    type: effort_controllers/JointEffortController
+    joint: aEjeRuedaIzqF
+
+  jointDerF_effort:
+    type: effort_controllers/JointEffortController
+    joint: aEjeRuedaDerF
+
+  jointIzqT_effort:
+    type: effort_controllers/JointEffortController
+    joint: aEjeRuedaIzqT
+
+  jointDerT_effort:
+    type: effort_controllers/JointEffortController
+    joint: aEjeRuedaDerT
+
+  jointBaseTorso_effort:
+    type: effort_controllers/JointEffortController
+    joint: bEjeBaseTorso
+
+  jointTorso_effort:
+    type: effort_controllers/JointEffortController
+    joint: bEjeTorso
+  

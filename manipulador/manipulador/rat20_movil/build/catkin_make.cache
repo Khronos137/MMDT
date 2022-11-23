@@ -1,0 +1,2 @@
+.
+-DCATKIN_DEVEL_PREFIX=/home/kleber/manipulador/rat20_movil/devel -DCMAKE_INSTALL_PREFIX=/home/kleber/manipulador/rat20_movil/install -G Unix Makefiles

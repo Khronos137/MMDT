@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="rat20_movil">
+  <!-- ros_control plugin -->
+ <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/rat20_movil</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <!-- Link -->
+  <gazebo reference="link">
+  </gazebo>
+  <!-- Link1 -->
+  <gazebo reference="link1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link2 -->
+  <gazebo reference="link2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link3 -->
+  <gazebo reference="link3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link4 -->
+  <gazebo reference="link4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link5 -->
+  <gazebo reference="link5">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link6 -->
+  <gazebo reference="link6">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- esfera1 -->
+  <gazebo reference="esfera">
+  </gazebo>
+  <!-- Plano -->
+  <gazebo reference="plano">
+  </gazebo>
+  <!-- End Link -->
+  <gazebo reference="end_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- World -->
+  <gazebo reference="world">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link7 -->
+  <gazebo reference="link7">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link8 -->
+  <gazebo reference="link8">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link9 -->
+  <gazebo reference="link9">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link10-->
+  <gazebo reference="link10">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link11 -->
+  <gazebo reference="link11">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Link12 -->
+  <gazebo reference="link12">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- End Link1 -->
+  <gazebo reference="end_link1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_base -->
+  <gazebo reference="rh_p12_rn_base">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_r1 -->
+  <gazebo reference="rh_p12_rn_r1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_r2 -->
+  <gazebo reference="rh_p12_rn_r2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_l1 -->
+  <gazebo reference="rh_p12_rn_l1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_l2 -->
+  <gazebo reference="rh_p12_rn_l2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_base_izq-->
+  <gazebo reference="rh_p12_rn_base_izq">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_r1 -->
+  <gazebo reference="rh_p12_rn_r1_izq">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_r2 -->
+  <gazebo reference="rh_p12_rn_r2_izq">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_l1 -->
+  <gazebo reference="rh_p12_rn_l1_izq">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- rh_p12_rn_l2 -->
+  <gazebo reference="rh_p12_rn_l2_izq">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- World1 -->
+  <gazebo reference="world1">
+  </gazebo>
+  <!--chasis-->
+  <gazebo reference="chasis">
+    <material value="Gazebo/Grey"/>
+  </gazebo>
+  <!--rueda1 -->
+  <gazebo reference="rueda1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!--rueda2-->
+  <gazebo reference="rueda2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!--rueda3-->
+  <gazebo reference="rueda3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!--rueda4 -->
+  <gazebo reference="rueda4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!--base1 -->
+  <gazebo reference="base1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="torso">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="accion_lineal">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+ <gazebo reference="motor_lineal">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+ <gazebo reference="perno">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <!-- Used for fixing robot to Gazebo 'link 1' -->
+  <link name="world">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <!--<origin xyz="0.00023 0.00000 -0.06377" rpy="0 0 0"/>-->
+      <mass value="10000"/>
+      <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>
+      <!--<inertia ixx="0.00121064" ixy="0.0" ixz="0.00001100" iyy="0.00120886" iyz="0.0" izz="0.00038103" />-->
+    </inertial>
+  </link>
+  <joint name="world_fixed" type="fixed">
+ <origin rpy="1.57 0 1.57" xyz="0 0 1"/>
+     <parent link="world"/>
+    <child link="link1"/>
+  </joint>
+  <!-- link 1 -->
+  <link name="link1">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00023 0.00000 0.06223"/>
+      <!--<origin xyz="0.00023 0.00000 -0.06377" rpy="0 0 0"/>-->
+      <mass value="0.85644"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00121064" ixy="0.0" ixz="0.00001100" iyy="0.00120886" iyz="0.0" izz="0.00038103" />-->
+    </inertial>
+  </link>
+  <!-- Joint 1 -->
+  <joint name="joint1" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.126"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link  2 -->
+  <link name="link2">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00000 0.00080 0.03183"/>
+      <!--<origin xyz="0.00000 -0.06820 -0.00117" rpy="0 0 0"/>-->
+      <mass value="0.94658"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00152547" ixy="0.0" ixz="0.0" iyy="0.00045954" iyz="-0.00001086" izz="0.00151740" />-->
+    </inertial>
+  </link>
+  <!-- Joint 2 -->
+  <joint name="joint2" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin rpy="0 0 0" xyz="0.0 0.069 0.033"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 3 -->
+  <link name="link3">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01768 -0.06881 0.20524"/>
+      <!--<origin xyz="-0.01232 -0.05731 -0.05876" rpy="0 0 0"/>-->
+      <mass value="1.30260"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.01111021" ixy="0.00001331" ixz="-0.00134208" iyy="0.01046642" iyz="0.00016235" izz="0.00202081" />-->
+    </inertial>
+  </link>
+  <!-- Joint 3 -->
+  <joint name="joint3" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin rpy="0 0 0" xyz="0.03000 -0.01150 0.26400"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 4 -->
+  <link name="link4">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.12475 -0.05716 0.02979"/>
+      <!--<origin xyz="-0.07025 0.00034 -0.00021" rpy="0 0 0"/>-->
+      <mass value="1.15977"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00096726" ixy="0.00004383" ixz="-0.00002771" iyy="0.00318801" iyz="0.00000627" izz="0.00341484" />-->
+    </inertial>
+  </link>
+  <!-- Joint 4 -->
+  <joint name="joint4" type="revolute">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin rpy="0 0 0" xyz="0.19500 -0.05750 0.03000"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 5 -->
+  <link name="link5">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.05642 -0.00217 0.00002"/>
+      <!--<origin xyz="-0.00658 -0.04717 0.00002" rpy="0 0 0"/>-->
+      <mass value="0.44688"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00030285" ixy="0.00000761" ixz="0.00000031" iyy="0.00022339" iyz="-0.00000001" izz="0.00039766" />-->
+    </inertial>
+  </link>
+  <!-- Joint 5 -->
+  <joint name="joint5" type="revolute">
+    <parent link="link5"/>
+    <child link="link6"/>
+    <origin rpy="0 0 0" xyz="0.06300 0.04500 0.00000"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 6 -->
+  <link name="link6">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.06831 -0.04457 0.00000"/>
+      <!--<origin xyz="-0.05469 0.00043 0.00000" rpy="0 0 0"/>-->
+      <mass value="0.43273"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00021512" ixy="0.00001009" ixz="0.00000000" iyy="0.00042827" iyz="0.00000000" izz="0.00051436" />-->
+    </inertial>
+  </link>
+  <!-- Joint 6 -->
+  <joint name="joint6" type="revolute">
+    <parent link="link6"/>
+    <child link="end_link"/>
+    <origin rpy="0 0 0" xyz="0.12300 -0.04500 0.00000"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- end link -->
+  <link name="end_link">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/end_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/end_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00337 0.00000 0.00000"/>
+      <mass value="0.01919"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00000938" ixy="0.0" ixz="0.0" iyy="0.00000338" iyz="0.0" izz="0.00000635" />-->
+    </inertial>
+  </link>
+  <joint name="joint14" type="fixed">
+    <origin rpy="-1.57 0 -1.57" xyz="0 0 0"/>
+    <parent link="end_link"/>
+    <child link="rh_p12_rn_base"/>
+  </joint>
+  <!-- base -->
+  <link name="rh_p12_rn_base">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/base11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/base11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 0.000 0.032"/>
+      <mass value="0.236"/>
+      <!--<inertia ixx="0.00017" ixy="0.0" ixz="0.0" iyy="0.00011" iyz="0.0" izz="0.00017" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Joint -->
+  <joint name="rh_p12_rn" type="revolute">
+    <parent link="rh_p12_rn_base"/>
+    <child link="rh_p12_rn_r1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.008 0.048"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.1" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_r1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_p12_rn">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_r1 -->
+  <link name="rh_p12_rn_r1">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 0.034 0.004"/>
+      <mass value="0.068"/>
+      <!--<inertia ixx="0.00004" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="-0.00001" izz="0.00002" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Right Joint 2 -->
+  <joint name="rh_r2" type="revolute">
+    <parent link="rh_p12_rn_r1"/>
+    <child link="rh_p12_rn_r2"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0493634 0.0285"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.0" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_r2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_r2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_r2 -->
+  <link name="rh_p12_rn_r2">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 0.006 0.011"/>
+      <mass value="0.022"/>
+      <!--<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.0" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Left Joint 1 -->
+  <joint name="rh_l1" type="revolute">
+    <parent link="rh_p12_rn_base"/>
+    <child link="rh_p12_rn_l1"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.008 0.048"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.1" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_l1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_l1 -->
+  <link name="rh_p12_rn_l1">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 -0.034 0.004"/>
+      <mass value="0.068"/>
+      <!--<inertia ixx="0.00004" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="0.00001" izz="0.00002" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Left Joint 2 -->
+  <joint name="rh_l2" type="revolute">
+    <parent link="rh_p12_rn_l1"/>
+    <child link="rh_p12_rn_l2"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.0493634 0.0285"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.0" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_l2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_l2 -->
+  <link name="rh_p12_rn_l2">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 -0.006 0.011"/>
+      <mass value="0.022"/>
+      <!--<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.0" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+ 
+  <joint name="world_fixed1" type="fixed">
+   <origin rpy="-1.57 0 1.57" xyz="-0.03 0 1"/>
+    <parent link="world"/>
+    <child link="link7"/>
+  </joint>
+  <!-- link 7 -->
+  <link name="link7">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00023 0.00000 0.06223"/>
+      <!--<origin xyz="0.00023 0.00000 -0.06377" rpy="0 0 0"/>-->
+      <mass value="0.85644"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00121064" ixy="0.0" ixz="0.00001100" iyy="0.00120886" iyz="0.0" izz="0.00038103" />-->
+    </inertial>
+  </link>
+  <!-- Joint 7 -->
+  <joint name="joint7" type="revolute">
+    <parent link="link7"/>
+    <child link="link8"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.126"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link  8 -->
+  <link name="link8">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00000 0.00080 0.03183"/>
+      <!--<origin xyz="0.00000 -0.06820 -0.00117" rpy="0 0 0"/>-->
+      <mass value="0.94658"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00152547" ixy="0.0" ixz="0.0" iyy="0.00045954" iyz="-0.00001086" izz="0.00151740" />-->
+    </inertial>
+  </link>
+  <!-- Joint 8 -->
+  <joint name="joint8" type="revolute">
+    <parent link="link8"/>
+    <child link="link9"/>
+    <origin rpy="0 0 0" xyz="0.0 0.069 0.033"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 9 -->
+  <link name="link9">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01768 -0.06881 0.20524"/>
+      <!--<origin xyz="-0.01232 -0.05731 -0.05876" rpy="0 0 0"/>-->
+      <mass value="1.30260"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.01111021" ixy="0.00001331" ixz="-0.00134208" iyy="0.01046642" iyz="0.00016235" izz="0.00202081" />-->
+    </inertial>
+  </link>
+  <!-- Joint 9 -->
+  <joint name="joint9" type="revolute">
+    <parent link="link9"/>
+    <child link="link10"/>
+    <origin rpy="0 0 0" xyz="0.03000 -0.01150 0.26400"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran9">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint9">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor9">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 10 -->
+  <link name="link10">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.12475 -0.05716 0.02979"/>
+      <!--<origin xyz="-0.07025 0.00034 -0.00021" rpy="0 0 0"/>-->
+      <mass value="1.15977"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00096726" ixy="0.00004383" ixz="-0.00002771" iyy="0.00318801" iyz="0.00000627" izz="0.00341484" />-->
+    </inertial>
+  </link>
+  <!-- Joint 10 -->
+  <joint name="joint10" type="revolute">
+    <parent link="link10"/>
+    <child link="link11"/>
+    <origin rpy="0 0 0" xyz="0.19500 -0.05750 0.03000"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran10">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint10">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor10">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 11 -->
+  <link name="link11">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.05642 -0.00217 0.00002"/>
+      <!--<origin xyz="-0.00658 -0.04717 0.00002" rpy="0 0 0"/>-->
+      <mass value="0.44688"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00030285" ixy="0.00000761" ixz="0.00000031" iyy="0.00022339" iyz="-0.00000001" izz="0.00039766" />-->
+    </inertial>
+  </link>
+  <!-- Joint 11 -->
+  <joint name="joint11" type="revolute">
+    <parent link="link11"/>
+    <child link="link12"/>
+    <origin rpy="0 0 0" xyz="0.06300 0.04500 0.00000"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint11">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor11">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- link 12 -->
+  <link name="link12">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/link_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.06831 -0.04457 0.00000"/>
+      <!--<origin xyz="-0.05469 0.00043 0.00000" rpy="0 0 0"/>-->
+      <mass value="0.43273"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00021512" ixy="0.00001009" ixz="0.00000000" iyy="0.00042827" iyz="0.00000000" izz="0.00051436" />-->
+    </inertial>
+  </link>
+  <!-- Joint 12 -->
+  <joint name="joint12" type="revolute">
+    <parent link="link12"/>
+    <child link="end_link1"/>
+    <origin rpy="0 0 0" xyz="0.12300 -0.04500 0.00000"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <dynamics damping="80"/>
+  </joint>
+  <transmission name="tran12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- end link1 -->
+  <link name="end_link1">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/end_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/end_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00337 0.00000 0.00000"/>
+      <mass value="0.01919"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <!--<inertia ixx="0.00000938" ixy="0.0" ixz="0.0" iyy="0.00000338" iyz="0.0" izz="0.00000635" />-->
+    </inertial>
+  </link>
+  <joint name="joint15" type="fixed">
+    <origin rpy="-1.57 0 -1.57" xyz="0 0 0"/>
+    <parent link="end_link1"/>
+    <child link="rh_p12_rn_base_izq"/>
+  </joint>
+  <!-- base -->
+  <link name="rh_p12_rn_base_izq">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/base11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/base11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 0.000 0.032"/>
+      <mass value="0.236"/>
+      <!--<inertia ixx="0.00017" ixy="0.0" ixz="0.0" iyy="0.00011" iyz="0.0" izz="0.00017" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Joint -->
+  <joint name="rh_p12_rn_izq" type="revolute">
+    <parent link="rh_p12_rn_base_izq"/>
+    <child link="rh_p12_rn_r1_izq"/>
+    <origin rpy="0 0 0" xyz="0.0 0.008 0.048"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.1" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_r1_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_p12_rn_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r1_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_r1 -->
+  <link name="rh_p12_rn_r1_izq">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 0.034 0.004"/>
+      <mass value="0.068"/>
+      <!--<inertia ixx="0.00004" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="-0.00001" izz="0.00002" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Right Joint 2 -->
+  <joint name="rh_r2_izq" type="revolute">
+    <parent link="rh_p12_rn_r1_izq"/>
+    <child link="rh_p12_rn_r2_izq"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0493634 0.0285"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.0" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_r2_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_r2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_r2 -->
+  <link name="rh_p12_rn_r2_izq">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/r2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 0.006 0.011"/>
+      <mass value="0.022"/>
+      <!--<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.0" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Left Joint 1 -->
+  <joint name="rh_l1_izq" type="revolute">
+    <parent link="rh_p12_rn_base_izq"/>
+    <child link="rh_p12_rn_l1_izq"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.008 0.048"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.1" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_l1_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l1_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l1_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_l1 -->
+  <link name="rh_p12_rn_l1_izq">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 -0.034 0.004"/>
+      <mass value="0.068"/>
+      <!--<inertia ixx="0.00004" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="0.00001" izz="0.00002" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- Left Joint 2 -->
+  <joint name="rh_l2_izq" type="revolute">
+    <parent link="rh_p12_rn_l1_izq"/>
+    <child link="rh_p12_rn_l2_izq"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.0493634 0.0285"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="0.0" upper="1.0" velocity="6.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  <transmission name="tran_l2_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- rh_p12_rn_l2 -->
+  <link name="rh_p12_rn_l2_izq">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://rat20_movil/meshes/l2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000 -0.006 0.011"/>
+      <mass value="0.022"/>
+      <!--<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.0" />-->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+ 
+</robot>

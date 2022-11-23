@@ -1,0 +1,6 @@
+# esfera_ns:
+#   r2d2_gripper_controller:
+# type: "position_controllers/JointPositionController"
+type: "effort_controllers/JointPositionController"
+joint: esferaY_extension
+pid: {p: 100.0, i: 10.0, d: 0.0}

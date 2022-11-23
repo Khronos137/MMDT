@@ -1,0 +1,31 @@
+# Para el control del brazo derecho
+mmdt_rat20:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+  # Position Controllers ---------------------------------------
+  joint1_manipIzq_effort:
+    type: effort_controllers/JointEffortController
+    joint: manipIzq_joint1
+
+  joint2_manipIzq_effort:
+    type: effort_controllers/JointEffortController
+    joint: manipIzq_joint2
+
+  joint3_manipIzq_effort:
+    type: effort_controllers/JointEffortController
+    joint: manipIzq_joint3
+
+  joint4_manipIzq_effort:
+    type: effort_controllers/JointEffortController
+    joint: manipIzq_joint4
+
+  joint5_manipIzq_effort:
+    type: effort_controllers/JointEffortController
+    joint: manipIzq_joint5
+
+  joint6_manipIzq_effort:
+    type: effort_controllers/JointEffortController
+    joint: manipIzq_joint6

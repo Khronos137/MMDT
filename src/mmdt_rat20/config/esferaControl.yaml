@@ -1,0 +1,13 @@
+esfera_controller:
+  positionX:
+    type: "effort_controllers/JointPositionController"
+    joint: esferaX_extension
+    pid: {p: 100.0, i: 10.0, d: 0.0}
+  positionY:
+    type: "effort_controllers/JointPositionController"
+    joint: esferaY_extension
+    pid: {p: 100.0, i: 10.0, d: 0.0}
+  positionZ:
+    type: "effort_controllers/JointPositionController"
+    joint: esferaZ_extension
+    pid: {p: 100.0, i: 10.0, d: 0.0}

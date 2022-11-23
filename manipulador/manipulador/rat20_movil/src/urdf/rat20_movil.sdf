@@ -1,0 +1,2479 @@
+<sdf version='1.6'>
+   <model name='rat20_movil'>
+    <joint name='world_fixed4' type='revolute'>
+      <pose relative_to='__model__'>0 0 0.3 -1.57159 -0.001593 3.14159</pose>
+      <parent>world</parent>
+      <child>chasis</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='chasis'>
+      <pose relative_to='world_fixed4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.19826 0.000595 -0.093428 0 -0 0</pose>
+        <mass>30.428</mass>
+        <inertia>
+          <ixx>0.14317</ixx>
+          <ixy>0.0012711</ixy>
+          <ixz>-0.015594</ixz>
+          <iyy>0.40158</iyy>
+          <iyz>8.4926e-06</iyz>
+          <izz>0.40545</izz>
+        </inertia>
+      </inertial>
+      <collision name='chasis_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/chasis.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='chasis_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/chasis.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='ejeBase' type='revolute'>
+      <pose relative_to='chasis'>0 0 0 1.5708 -0.02106 0</pose>
+      <parent>chasis</parent>
+      <child>base1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>10.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='base1'>
+      <pose relative_to='ejeBase'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000637 0.000637 0.042268 0 -0 0</pose>
+        <mass>4.5655</mass>
+        <inertia>
+          <ixx>0.010577</ixx>
+          <ixy>4.9602e-05</ixy>
+          <ixz>-0.00016934</ixz>
+          <iyy>0.0094434</iyy>
+          <iyz>4.9221e-06</iyz>
+          <izz>0.013211</izz>
+        </inertia>
+      </inertial>
+      <collision name='base1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/base1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/base1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='eje6' type='revolute'>
+      <pose relative_to='base1'>-0.07 0 0.078 1.5708 0 -1.5708</pose>
+      <parent>base1</parent>
+      <child>torso</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='torso'>
+      <pose relative_to='eje6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000248 0.153725 -0.002871 0 -0 0</pose>
+        <mass>5.69688</mass>
+        <inertia>
+          <ixx>2.00893</ixx>
+          <ixy>-1.05164e-05</ixy>
+          <ixz>-9.69925e-06</ixz>
+          <iyy>2.01558</iyy>
+          <iyz>-0.000242821</iyz>
+          <izz>2.02295</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/torso.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_fixed_joint_lump__link1_collision_1'>
+        <pose>-0.014 0.19 0 0 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_fixed_joint_lump__link7_collision_2'>
+        <pose>0.014 0.19 0 3.1408 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='torso_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/torso.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='torso_fixed_joint_lump__link1_visual_1'>
+        <pose>-0.014 0.19 0 0 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='torso_fixed_joint_lump__link7_visual_2'>
+        <pose>0.014 0.19 0 3.1408 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='eje7' type='revolute'>
+      <pose relative_to='torso'>0 0.184 -0.105 1.5708 -0 0</pose>
+      <parent>torso</parent>
+      <child>perno</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='perno'>
+      <pose relative_to='eje7'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0 0 0 -0 0</pose>
+        <mass>0.008093</mass>
+        <inertia>
+          <ixx>3.5986e-08</ixx>
+          <ixy>-1.2458e-22</ixy>
+          <ixz>3.3179e-23</ixz>
+          <iyy>9.2017e-07</iyy>
+          <iyz>3.2452e-24</iyz>
+          <izz>9.2017e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='perno_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/perno.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='perno_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/perno.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint1' type='revolute'>
+      <pose relative_to='torso'>-0.14 0.19 0.0001 0 -1.57 0</pose>
+      <parent>torso</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+     
+    <link name='link2'>
+      <pose relative_to='joint1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.0008 0.03183 0 -0 0</pose>
+        <mass>0.94658</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint2' type='revolute'>
+      <pose relative_to='link2'>0 0.069 0.033 0 -0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link3'>
+      <pose relative_to='joint2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01768 -0.06881 0.20524 0 -0 0</pose>
+        <mass>1.3026</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_3.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint3' type='revolute'>
+      <pose relative_to='link3'>0.03 -0.0115 0.264 0 -0 0</pose>
+      <parent>link3</parent>
+      <child>link4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link4'>
+      <pose relative_to='joint3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.12475 -0.05716 0.02979 0 -0 0</pose>
+        <mass>1.15977</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_4.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint4' type='revolute'>
+      <pose relative_to='link4'>0.195 -0.0575 0.03 0 -0 0</pose>
+      <parent>link4</parent>
+      <child>link5</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link5'>
+      <pose relative_to='joint4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.05642 -0.00217 2e-05 0 -0 0</pose>
+        <mass>0.44688</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link5_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_5.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint5' type='revolute'>
+      <pose relative_to='link5'>0.063 0.045 0 0 -0 0</pose>
+      <parent>link5</parent>
+      <child>link6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link6'>
+      <pose relative_to='joint5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.06831 -0.04457 0 0 -0 0</pose>
+        <mass>0.43273</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link6_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_6.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint6' type='revolute'>
+      <pose relative_to='link6'>0.123 -0.045 0 0 -0 0</pose>
+      <parent>link6</parent>
+      <child>end_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='end_link'>
+      <pose relative_to='joint6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.029847 2.4e-05 2.4e-05 0 -0 0</pose>
+        <mass>0.25519</mass>
+        <inertia>
+          <ixx>2</ixx>
+          <ixy>-1.29475e-08</ixy>
+          <ixz>-1.29475e-08</ixz>
+          <iyy>2.00001</iyy>
+          <iyz>-1.15241e-11</iyz>
+          <izz>2.00001</izz>
+        </inertia>
+      </inertial>
+      <collision name='end_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/end_link.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='end_link_fixed_joint_lump__rh_p12_rn_base_collision_1'>
+        <pose>0 0 0 -1.57 -0 -1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='end_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/end_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='end_link_fixed_joint_lump__rh_p12_rn_base_visual_1'>
+        <pose>0 0 0 -1.57 -0 -1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_l1' type='revolute'>
+      <pose relative_to='end_link'>0.047994 3.8e-05 0.008038 -1.57 -0 -1.57</pose>
+      <parent>end_link</parent>
+      <child>rh_p12_rn_l1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_l1'>
+      <pose relative_to='rh_l1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.034 0.004 0 -0 0</pose>
+        <mass>0.068</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_l1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_l1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_l2' type='revolute'>
+      <pose relative_to='rh_p12_rn_l1'>0 -0.049363 0.0285 0 -0 0</pose>
+      <parent>rh_p12_rn_l1</parent>
+      <child>rh_p12_rn_l2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_l2'>
+      <pose relative_to='rh_l2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.006 0.011 0 -0 0</pose>
+        <mass>0.022</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_l2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_l2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_p12_rn' type='revolute'>
+      <pose relative_to='end_link'>0.048006 3.8e-05 -0.007962 -1.57 -0 -1.57</pose>
+      <parent>end_link</parent>
+      <child>rh_p12_rn_r1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_r1'>
+      <pose relative_to='rh_p12_rn'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.034 0.004 0 -0 0</pose>
+        <mass>0.068</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_r1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_r1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_r2' type='revolute'>
+      <pose relative_to='rh_p12_rn_r1'>0 0.049363 0.0285 0 -0 0</pose>
+      <parent>rh_p12_rn_r1</parent>
+      <child>rh_p12_rn_r2</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_r2'>
+      <pose relative_to='rh_r2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.006 0.011 0 -0 0</pose>
+        <mass>0.022</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_r2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_r2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint7' type='revolute'>
+      <pose relative_to='torso'>0.14 0.189799 0 1.57 -1.57 1.57</pose>
+      <parent>torso</parent>
+      <child>link8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link8'>
+      <pose relative_to='joint7'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.0008 0.03183 0 -0 0</pose>
+        <mass>0.94658</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link8_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link8_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint8' type='revolute'>
+      <pose relative_to='link8'>0 0.069 0.033 0 -0 0</pose>
+      <parent>link8</parent>
+      <child>link9</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link9'>
+      <pose relative_to='joint8'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01768 -0.06881 0.20524 0 -0 0</pose>
+        <mass>1.3026</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link9_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_3.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link9_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint9' type='revolute'>
+      <pose relative_to='link9'>0.03 -0.0115 0.264 0 -0 0</pose>
+      <parent>link9</parent>
+      <child>link10</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link10'>
+      <pose relative_to='joint9'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.12475 -0.05716 0.02979 0 -0 0</pose>
+        <mass>1.15977</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link10_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_4.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link10_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint10' type='revolute'>
+      <pose relative_to='link10'>0.195 -0.0575 0.03 0 -0 0</pose>
+      <parent>link10</parent>
+      <child>link11</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link11'>
+      <pose relative_to='joint10'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.05642 -0.00217 2e-05 0 -0 0</pose>
+        <mass>0.44688</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link11_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_5.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link11_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint11' type='revolute'>
+      <pose relative_to='link11'>0.063 0.045 0 0 -0 0</pose>
+      <parent>link11</parent>
+      <child>link12</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link12'>
+      <pose relative_to='joint11'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.06831 -0.04457 0 0 -0 0</pose>
+        <mass>0.43273</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='link12_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_6.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link12_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/link_6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint12' type='revolute'>
+      <pose relative_to='link12'>0.123 -0.045 0 0 -0 0</pose>
+      <parent>link12</parent>
+      <child>end_link1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>80</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='end_link1'>
+      <pose relative_to='joint12'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.029847 2.4e-05 2.4e-05 0 -0 0</pose>
+        <mass>0.25519</mass>
+        <inertia>
+          <ixx>2</ixx>
+          <ixy>-1.29475e-08</ixy>
+          <ixz>-1.29475e-08</ixz>
+          <iyy>2.00001</iyy>
+          <iyz>-1.15241e-11</iyz>
+          <izz>2.00001</izz>
+        </inertia>
+      </inertial>
+      <collision name='end_link1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/end_link.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='end_link1_fixed_joint_lump__rh_p12_rn_base_izq_collision_1'>
+        <pose>0 0 0 -1.57 -0 -1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='end_link1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/end_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='end_link1_fixed_joint_lump__rh_p12_rn_base_izq_visual_1'>
+        <pose>0 0 0 -1.57 -0 -1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_l1_izq' type='revolute'>
+      <pose relative_to='end_link1'>0.047994 3.8e-05 0.008038 -1.57 -0 -1.57</pose>
+      <parent>end_link1</parent>
+      <child>rh_p12_rn_l1_izq</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_l1_izq'>
+      <pose relative_to='rh_l1_izq'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.034 0.004 0 -0 0</pose>
+        <mass>0.068</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_l1_izq_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_l1_izq_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_l2_izq' type='revolute'>
+      <pose relative_to='rh_p12_rn_l1_izq'>0 -0.049363 0.0285 0 -0 0</pose>
+      <parent>rh_p12_rn_l1_izq</parent>
+      <child>rh_p12_rn_l2_izq</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_l2_izq'>
+      <pose relative_to='rh_l2_izq'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.006 0.011 0 -0 0</pose>
+        <mass>0.022</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_l2_izq_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_l2_izq_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/l2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_p12_rn_izq' type='revolute'>
+      <pose relative_to='end_link1'>0.048006 3.8e-05 -0.007962 -1.57 -0 -1.57</pose>
+      <parent>end_link1</parent>
+      <child>rh_p12_rn_r1_izq</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_r1_izq'>
+      <pose relative_to='rh_p12_rn_izq'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.034 0.004 0 -0 0</pose>
+        <mass>0.068</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_r1_izq_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_r1_izq_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rh_r2_izq' type='revolute'>
+      <pose relative_to='rh_p12_rn_r1_izq'>0 0.049363 0.0285 0 -0 0</pose>
+      <parent>rh_p12_rn_r1_izq</parent>
+      <child>rh_p12_rn_r2_izq</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rh_p12_rn_r2_izq'>
+      <pose relative_to='rh_r2_izq'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.006 0.011 0 -0 0</pose>
+        <mass>0.022</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='rh_p12_rn_r2_izq_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rh_p12_rn_r2_izq_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/r2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ejeDerF' type='revolute'>
+      <pose relative_to='chasis'>-0.054 0.1548 0.1651 -3.14159 -0 -2.609</pose>
+      <parent>chasis</parent>
+      <child>rueda2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>10.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rueda2'>
+      <pose relative_to='ejeDerF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>2e-06 -1e-06 -0.10103 0 -0 0</pose>
+        <mass>2.2464</mass>
+        <inertia>
+          <ixx>0.0080453</ixx>
+          <ixy>-7.6009e-08</ixy>
+          <ixz>8.3318e-08</ixz>
+          <iyy>0.0080454</iyy>
+          <iyz>1.8056e-07</iyz>
+          <izz>0.011889</izz>
+        </inertia>
+      </inertial>
+      <collision name='rueda2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rueda2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ejeDerT' type='revolute'>
+      <pose relative_to='chasis'>0.446 0.1548 0.1651 -3.14159 0 -2.6599</pose>
+      <parent>chasis</parent>
+      <child>rueda4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>10.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rueda4'>
+      <pose relative_to='ejeDerT'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>2e-06 -1e-06 -0.10103 0 -0 0</pose>
+        <mass>2.2464</mass>
+        <inertia>
+          <ixx>0.0080453</ixx>
+          <ixy>-7.6089e-08</ixy>
+          <ixz>7.9894e-08</ixz>
+          <iyy>0.0080453</iyy>
+          <iyz>1.8053e-07</iyz>
+          <izz>0.011889</izz>
+        </inertia>
+      </inertial>
+      <collision name='rueda4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rueda4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ejeIzqF' type='revolute'>
+      <pose relative_to='chasis'>-0.054 0.1548 -0.1651 0 0 -1.2858</pose>
+      <parent>chasis</parent>
+      <child>rueda1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>10.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rueda1'>
+      <pose relative_to='ejeIzqF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>2e-06 -1e-06 -0.10103 0 -0 0</pose>
+        <mass>2.2464</mass>
+        <inertia>
+          <ixx>0.0080453</ixx>
+          <ixy>-7.611e-08</ixy>
+          <ixz>8.2614e-08</ixz>
+          <iyy>0.0080454</iyy>
+          <iyz>1.8052e-07</iyz>
+          <izz>0.011889</izz>
+        </inertia>
+      </inertial>
+      <collision name='rueda1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rueda1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ejeIzqT' type='revolute'>
+      <pose relative_to='chasis'>0.446 0.1548 -0.1651 0 0 -1.379</pose>
+      <parent>chasis</parent>
+      <child>rueda3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>10.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rueda3'>
+      <pose relative_to='ejeIzqT'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>2e-06 -1e-06 -0.10103 0 -0 0</pose>
+        <mass>2.2464</mass>
+        <inertia>
+          <ixx>0.0080453</ixx>
+          <ixy>-7.6081e-08</ixy>
+          <ixz>8.1449e-08</ixz>
+          <iyy>0.0080454</iyy>
+          <iyz>1.8052e-07</iyz>
+          <izz>0.011889</izz>
+        </inertia>
+      </inertial>
+      <collision name='rueda3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rueda3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/rueda1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+<transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+
+
+
+<transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+ <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+ <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran_r1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_p12_rn">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+<transmission name="tran_r2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_r2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+<transmission name="tran_l1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+ <transmission name="tran_l2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran9">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint9">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor9">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran10">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint10">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor10">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+<transmission name="tran11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint11">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor11">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+<transmission name="tran12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran_r1_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_p12_rn_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r1_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran_r2_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_r2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_r2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran_l1_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l1_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l1_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran_l2_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rh_l2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_l2_izq">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran1_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="ejeIzqF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1_izq">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran2_der">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="ejeDerF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2_der">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran3_izq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="ejeIzqT">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3_izq">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran4_der">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="ejeDerT">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4_der">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tranBase">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="ejeBase">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motorBase">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>    
+<static>0</static>
+
+	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/rat20_movil</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+
+ <link name='motor_lineal'>
+      <pose relative_to='base1'>0.104 0 0.03 0 -0.28908 0</pose>
+      <inertial>
+        <pose>-4.7858E-09 0.015206 0.083953 0 0 0</pose>
+        <mass>0.97646</mass>
+        <inertia>
+          <ixx>0.0033834</ixx>
+          <ixy>-1.4738E-10</ixy>
+          <ixz>-2.9767E-10</ixz>
+          <iyy>0.0030359</iyy>
+          <iyz>0.00020997</iyz>
+          <izz>0.00053991</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor_lineal_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/motor_lineal.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='motor_lineal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/motor_lineal.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+<joint name='eje8' type='continuous'>
+      <pose relative_to='base1'>0.104 0 0.03 0.28908 0 -1.5708</pose>
+      <parent>base1</parent>
+      <child>motor_lineal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>10.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+  
+ <link name='accion_lineal'>
+      <pose relative_to='motor_lineal'>4.9324E-09 2.2185E-09 0.076684 0 0 1.57</pose>
+      <inertial>
+        <pose>4.9324E-09 2.2185E-09 0.076684 0 0 0</pose>
+        <mass>0.14682</mass>
+        <inertia>
+          <ixx>0.00041695</ixx>
+          <ixy>-6.3911E-13</ixy>
+          <ixz>-5.0141E-11</ixz>
+          <iyy>0.00041691</iyy>
+          <iyz>-2.1245E-11</iyz>
+          <izz>6.6825E-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='accion_lineal_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/accion_lineal.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='accion_lineal_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/kleber/Desktop/rat20_movil/src/meshes/accion_lineal.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+  <joint name="eje9" type="revolute">
+    <origin xyz="0 0 0.081496" rpy="0 0 0" />
+    <parent link="motor_lineal" />
+    <child link="accion_lineal" />
+    <axis  xyz="0 0 1" />
+  </joint>
+
+  </model>
+</sdf>

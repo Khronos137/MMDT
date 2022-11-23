@@ -1,0 +1,8 @@
+prefix=/mnt/c/TunnelWSL/MMDT_estatico/devel
+
+Name: mmdt_rat20
+Description: Description of mmdt_rat20
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp gazebo_ros

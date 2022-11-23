@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rat20_movil</name>
+  <version>0.3.1</version>
+  <description>
+    <p>URDF Description package for rat20_movil</p>
+    <p>This package contains configuration data, 3D models and launch files
+for rat20_movil robot</p>
+  </description>
+  <author>TODO</author>
+  <maintainer email="TODO@email.com" />
+  <license>Apache 2.0</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>roslaunch</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <export>
+    <architecture_independent />
+  </export>
+</package>
+
