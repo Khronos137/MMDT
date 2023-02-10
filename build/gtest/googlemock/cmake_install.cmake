@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/mnt/c/TunnelWSL/MMDT_estatico/install")
+  set(CMAKE_INSTALL_PREFIX "/home/DesktopFer/MMDT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/c/TunnelWSL/MMDT_estatico/build/gtest/googlemock/gtest/cmake_install.cmake")
+  include("/home/DesktopFer/MMDT/build/gtest/googlemock/gtest/cmake_install.cmake")
 
 endif()
 

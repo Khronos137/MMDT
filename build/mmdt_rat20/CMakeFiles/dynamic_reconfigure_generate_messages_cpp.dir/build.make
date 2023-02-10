@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/TunnelWSL/MMDT_estatico/src
+CMAKE_SOURCE_DIR = /home/DesktopFer/MMDT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/TunnelWSL/MMDT_estatico/build
+CMAKE_BINARY_DIR = /home/DesktopFer/MMDT/build
 
 # Utility rule file for dynamic_reconfigure_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build: dynam
 .PHONY : mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
 
 mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean:
-	cd /mnt/c/TunnelWSL/MMDT_estatico/build/mmdt_rat20 && $(CMAKE_COMMAND) -P CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/DesktopFer/MMDT/build/mmdt_rat20 && $(CMAKE_COMMAND) -P CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean
 
 mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/depend:
-	cd /mnt/c/TunnelWSL/MMDT_estatico/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/TunnelWSL/MMDT_estatico/src /mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20 /mnt/c/TunnelWSL/MMDT_estatico/build /mnt/c/TunnelWSL/MMDT_estatico/build/mmdt_rat20 /mnt/c/TunnelWSL/MMDT_estatico/build/mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/DesktopFer/MMDT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/DesktopFer/MMDT/src /home/DesktopFer/MMDT/src/mmdt_rat20 /home/DesktopFer/MMDT/build /home/DesktopFer/MMDT/build/mmdt_rat20 /home/DesktopFer/MMDT/build/mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mmdt_rat20/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/depend
 

@@ -1,4 +1,4 @@
-prefix=/mnt/c/TunnelWSL/MMDT_estatico/install
+prefix=/home/DesktopFer/MMDT/install
 
 Name: mmdt_rat20
 Description: Description of mmdt_rat20

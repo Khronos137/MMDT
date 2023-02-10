@@ -67,14 +67,14 @@ set(mmdt_rat20_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(mmdt_rat20_SOURCE_PREFIX /mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20)
-  set(mmdt_rat20_DEVEL_PREFIX /mnt/c/TunnelWSL/MMDT_estatico/devel)
+  set(mmdt_rat20_SOURCE_PREFIX /home/DesktopFer/MMDT/src/mmdt_rat20)
+  set(mmdt_rat20_DEVEL_PREFIX /home/DesktopFer/MMDT/devel)
   set(mmdt_rat20_INSTALL_PREFIX "")
   set(mmdt_rat20_PREFIX ${mmdt_rat20_DEVEL_PREFIX})
 else()
   set(mmdt_rat20_SOURCE_PREFIX "")
   set(mmdt_rat20_DEVEL_PREFIX "")
-  set(mmdt_rat20_INSTALL_PREFIX /mnt/c/TunnelWSL/MMDT_estatico/install)
+  set(mmdt_rat20_INSTALL_PREFIX /home/DesktopFer/MMDT/install)
   set(mmdt_rat20_PREFIX ${mmdt_rat20_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /mnt/c/TunnelWSL/MMDT_estatico/install/lib;/mnt/c/TunnelWSL/MMDT_estatico/devel/lib;/mnt/c/TunnelWSL/rat20_movil/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/DesktopFer/MMDT/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

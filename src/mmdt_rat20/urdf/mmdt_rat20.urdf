@@ -25,7 +25,7 @@
         xyz="0.19826 0.00059528 -0.093428"
 		    rpy="0 0 0" />
 		<mass
-        value="360.428" /> <!-- Valor original: 30.428-->
+        value="30.428" /> <!-- Valor original: 30.428-->
       <inertia
         ixx="0.14317"
         ixy="0.0012711"

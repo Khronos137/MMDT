@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find mmdt_rat20)/config/effort_rat20_movilTorso.yaml" command="load"/>
+  <rosparam file="$(find mmdt_rat20)/config/position_rat20_movilTorso.yaml" command="load"/>
+  <rosparam file="$(find mmdt_rat20)/config/position_rat20_manipDer.yaml" command="load"/>
+  <rosparam file="$(find mmdt_rat20)/config/position_rat20_manipIzq.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node pkg="controller_manager" type="spawner" name="controller_spawner" 
+	      respawn="false" output="screen" ns="/mmdt_rat20"
+	      args="joint_state_controller
+				      jointIzqF_effort
+				      jointDerF_effort
+				      jointIzqT_effort
+				      jointDerT_effort
+					  jointBaseTorso_position
+					  jointTorso_position
+					  joint1_manipDer_position
+					  joint2_manipDer_position
+					  joint3_manipDer_position
+					  joint4_manipDer_position
+					  joint5_manipDer_position
+					  joint6_manipDer_position
+					  joint1_manipIzq_position
+					  joint2_manipIzq_position
+					  joint3_manipIzq_position
+					  joint4_manipIzq_position
+					  joint5_manipIzq_position
+					  joint6_manipIzq_position"/>
+
+</launch> 

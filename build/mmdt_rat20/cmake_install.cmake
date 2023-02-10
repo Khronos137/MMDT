@@ -1,8 +1,8 @@
-# Install script for directory: /mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20
+# Install script for directory: /home/DesktopFer/MMDT/src/mmdt_rat20
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/mnt/c/TunnelWSL/MMDT_estatico/install")
+  set(CMAKE_INSTALL_PREFIX "/home/DesktopFer/MMDT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,33 +38,33 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/c/TunnelWSL/MMDT_estatico/build/mmdt_rat20/catkin_generated/installspace/mmdt_rat20.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/DesktopFer/MMDT/build/mmdt_rat20/catkin_generated/installspace/mmdt_rat20.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/cmake" TYPE FILE FILES
-    "/mnt/c/TunnelWSL/MMDT_estatico/build/mmdt_rat20/catkin_generated/installspace/mmdt_rat20Config.cmake"
-    "/mnt/c/TunnelWSL/MMDT_estatico/build/mmdt_rat20/catkin_generated/installspace/mmdt_rat20Config-version.cmake"
+    "/home/DesktopFer/MMDT/build/mmdt_rat20/catkin_generated/installspace/mmdt_rat20Config.cmake"
+    "/home/DesktopFer/MMDT/build/mmdt_rat20/catkin_generated/installspace/mmdt_rat20Config-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20" TYPE FILE FILES "/mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20" TYPE FILE FILES "/home/DesktopFer/MMDT/src/mmdt_rat20/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/config" TYPE DIRECTORY FILES "/mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20/config/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/config" TYPE DIRECTORY FILES "/home/DesktopFer/MMDT/src/mmdt_rat20/config/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/launch" TYPE DIRECTORY FILES "/mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/launch" TYPE DIRECTORY FILES "/home/DesktopFer/MMDT/src/mmdt_rat20/launch/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/meshes" TYPE DIRECTORY FILES "/mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20/meshes/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/meshes" TYPE DIRECTORY FILES "/home/DesktopFer/MMDT/src/mmdt_rat20/meshes/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/urdf" TYPE DIRECTORY FILES "/mnt/c/TunnelWSL/MMDT_estatico/src/mmdt_rat20/urdf/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mmdt_rat20/urdf" TYPE DIRECTORY FILES "/home/DesktopFer/MMDT/src/mmdt_rat20/urdf/")
 endif()
 

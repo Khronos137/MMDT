@@ -7,6 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/mnt/c/TunnelWSL/rat20_movil/devel/lib:/opt/ros/melodic/lib'
-export PKG_CONFIG_PATH='/mnt/c/TunnelWSL/rat20_movil/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig'
-export PWD='/mnt/c/TunnelWSL/MMDT_estatico/build'
+export CMAKE_PREFIX_PATH="/home/DesktopFer/MMDT/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/DesktopFer/MMDT/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/DesktopFer/MMDT/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/DesktopFer/MMDT/src:$ROS_PACKAGE_PATH"
