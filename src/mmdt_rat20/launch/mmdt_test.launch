@@ -23,8 +23,11 @@
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find mmdt_rat20)/urdf/mmdt_rat20.urdf'" />
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
-    <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
-          args="-R -1.57 -Y 3.1416 -x -0.075 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/>
+    <!-- <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
+          args="-R -1.57 -Y 3.1416 -x -0.075 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/> -->
+      <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
+          args="-R -1.57 -Y 3.1416 -x -0.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/>
+
 
     <!-- ros_control robotis manipulator launch file -->
     <include file="$(find mmdt_rat20)/launch/effortPlatf_PosMMDT_controller.launch" />
