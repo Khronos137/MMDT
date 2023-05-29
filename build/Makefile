@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/DesktopFer/MMDT/src
+CMAKE_SOURCE_DIR = /mnt/c/TunnelWSL/MMDT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/DesktopFer/MMDT/build
+CMAKE_BINARY_DIR = /mnt/c/TunnelWSL/MMDT/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DesktopFer/MMDT/build/CMakeFiles /home/DesktopFer/MMDT/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/TunnelWSL/MMDT/build/CMakeFiles /mnt/c/TunnelWSL/MMDT/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DesktopFer/MMDT/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/TunnelWSL/MMDT/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -283,6 +283,19 @@ gtest: cmake_check_build_system
 gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named contact
+
+# Build rule for target.
+contact: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 contact
+.PHONY : contact
+
+# fast build rule for target.
+contact/fast:
+	$(MAKE) -f mmdt_rat20/CMakeFiles/contact.dir/build.make mmdt_rat20/CMakeFiles/contact.dir/build
+.PHONY : contact/fast
 
 #=============================================================================
 # Target rules for targets named trajectory_msgs_generate_messages_nodejs
@@ -1177,6 +1190,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... contact"
 	@echo "... trajectory_msgs_generate_messages_nodejs"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_cpp"

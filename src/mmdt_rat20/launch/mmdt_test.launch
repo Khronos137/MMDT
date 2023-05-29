@@ -10,7 +10,8 @@
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find mmdt_rat20)/worlds/empty.world"/>
+    <!-- <arg name="world_name" value="$(find mmdt_rat20)/worlds/floorFriction.world"/> -->
+    <arg name="world_name" value="$(find mmdt_rat20)/worlds/dev_mesaParedPuerta.world"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
@@ -21,12 +22,11 @@
   <group>
     <!-- Load the URDF into the ROS Parameter Server -->
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find mmdt_rat20)/urdf/mmdt_rat20.urdf'" />
-
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <!-- <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
-          args="-R -1.57 -Y 3.1416 -x -0.075 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/> -->
+          args="-R -1.57 -Y 3.1416 -x -0.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/> -->
       <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
-          args="-R -1.57 -Y 3.1416 -x -0.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/>
+          args="-R -1.57 -Y 3.1416 -x -6.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/>
 
 
     <!-- ros_control robotis manipulator launch file -->

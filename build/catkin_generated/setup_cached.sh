@@ -7,7 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/DesktopFer/MMDT/devel:$CMAKE_PREFIX_PATH"
-export PWD='/home/DesktopFer/MMDT/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/DesktopFer/MMDT/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/DesktopFer/MMDT/src:$ROS_PACKAGE_PATH"
+export LD_LIBRARY_PATH='/opt/ros/melodic/lib'
+export PKG_CONFIG_PATH='/opt/ros/melodic/lib/pkgconfig'
+export PWD='/mnt/c/TunnelWSL/MMDT/build'

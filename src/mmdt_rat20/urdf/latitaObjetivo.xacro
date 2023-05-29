@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<robot name="latita" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="pi" value="3.1415" />
+
+
+<!-- DEFINICIONES INICIALES -->
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+
+<!-- CONSTRUCCION DE latitaS PARA CONTROLAR LA TERCERA EN TODAS LAS POSICIONES -->
+
+  <link name="world">
+  </link>
+
+  <joint name="latitaX_extension" type="prismatic">
+    <parent link="world"/>
+    <child link="latitaX_link"/>
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+  <joint name="latitaY_extension" type="prismatic">
+    <parent link="latitaX_link"/>
+    <child link="latitaY_link"/>
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+  <joint name="latitaZ_extension" type="prismatic">
+    <parent link="latitaY_link"/>
+    <child link="latitaZ_link"/>
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+<!-- AQUI SE DEFINE LAS CARACTERISTICAS FISICAS DE LA ESFERITA-->
+  <link name="latitaX_link">
+    <gravity>0</gravity>
+    <visual>
+      <geometry>
+        <cylinder radius="0.0005" length="0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+    </visual>
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <link name="latitaY_link">
+    <gravity>0</gravity>
+    <visual>
+      <geometry>
+        <cylinder radius="0.0005" length="0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+    </visual>
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <link name="latitaZ_link">
+    <gravity>0</gravity>
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.2"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+    </visual>
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <transmission name="gripper_extension_transX" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorX">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="latitaX_extension">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <transmission name="gripper_extension_transY" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorY">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="latitaY_extension">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <transmission name="gripper_extension_transZ" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorZ">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="latitaZ_extension">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- <robotNamespace>/latita</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="latitaZ_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+    <!-- <material>Gazebo/RedTransparent</material> -->
+  </gazebo>
+
+</robot>

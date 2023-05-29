@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/DesktopFer/MMDT/src
-# Build directory: /home/DesktopFer/MMDT/build
+# Source directory: /mnt/c/TunnelWSL/MMDT/src
+# Build directory: /mnt/c/TunnelWSL/MMDT/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

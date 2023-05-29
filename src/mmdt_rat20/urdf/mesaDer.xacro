@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<robot name="mesaDer" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="pi" value="3.1415" />
+  <xacro:property name="width" value="0.02" />
+  <xacro:property name="radio" value="0.02" />
+  
+  <!-- <xacro:include filename="$(find mmdt_rat20)/urdf/materials.xacro" /> -->
+
+<!-- DEFINICIONES INICIALES -->
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+
+<!-- CONSTRUCCION DE cilindroS PARA CONTROLAR LA TERCERA EN TODAS LAS POSICIONES -->
+  <link name="world">
+  </link>
+
+  <joint name="cilindroZ_extension" type="prismatic">
+    <parent link="world"/>
+    <child link="cilindroZ_link"/>
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+  <link name="cilindroZ_link">
+    <gravity>0</gravity>
+    <!-- <inertial>
+      <mass>1</mass>
+      <inertia>
+        <ixx>0.145833</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.145833</iyy>
+        <iyz>0</iyz>
+        <izz>0.125</izz>
+      </inertia>
+      <pose>0 0 0 0 -0 0</pose>
+    </inertial> -->
+    <!-- <collision name='collision'>
+      <geometry>
+        <cylinder radius="1.5" length="0.02"/>
+      </geometry>
+      <max_contacts>10</max_contacts>
+      <surface>
+        <contact>
+          <ode/>
+        </contact>
+        <bounce/>
+        <friction>
+          <torsional>
+            <ode/>
+          </torsional>
+          <ode/>
+        </friction>
+      </surface>
+    </collision> -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <cylinder radius="1.5" length="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <!-- <material>
+        <script>
+          <name>Gazebo/Wood</name>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+        </script>
+      </material> -->
+    </visual>
+    <self_collide>0</self_collide>
+    <enable_wind>0</enable_wind>
+    <kinematic>0</kinematic>
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <transmission name="gripper_extension_transZ" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorZ">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="cilindroZ_extension">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- <robotNamespace>/cilindro</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+    </plugin>
+  </gazebo>
+
+<!-- **** Informacion de texturas:
+Aqui se pueden aniadir texturas personalizadas directamente, dado que en el 
+package se tiene configurado asi:
+<run_depend>gazebo_ros</run_depend>
+<export>    
+  <gazebo_ros gazebo_media_path="${prefix}"/>                             
+</export>
+Ahi solo se llama al material:
+<material>mmdt/pisoHierba</material> 
+**** -->
+
+  <gazebo reference="cilindroZ_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/DarkGrey</material>
+    <!-- <material>Table/Marble_Lightmap</material> -->
+    <!-- <material>mmdt/pisoHierba</material>       -->
+  </gazebo>
+
+</robot>

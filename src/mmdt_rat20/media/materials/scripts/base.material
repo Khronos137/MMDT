@@ -1,4 +1,4 @@
-material rat20/FlorMaterial
+material mmdt/pisoHierba
 {
     technique
     {
@@ -6,14 +6,14 @@ material rat20/FlorMaterial
         {
             texture_unit
             {
-                texture figuraFlor.png
+                texture pisoHierba.png
                 scale 1 1
             }
         }   
     }
 }
 
-material rat20/OchoMaterial
+material mmdt/pisoHierba200dpi
 {
     technique
     {
@@ -21,7 +21,7 @@ material rat20/OchoMaterial
         {
             texture_unit
             {
-                texture figuraOcho.png
+                texture pisoHierba200dpi.png
                 scale 1 1
             }
         }   

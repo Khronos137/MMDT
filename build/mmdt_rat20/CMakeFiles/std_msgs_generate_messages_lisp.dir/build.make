@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/DesktopFer/MMDT/src
+CMAKE_SOURCE_DIR = /mnt/c/TunnelWSL/MMDT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/DesktopFer/MMDT/build
+CMAKE_BINARY_DIR = /mnt/c/TunnelWSL/MMDT/build
 
 # Utility rule file for std_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/build: std_msgs_genera
 .PHONY : mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 
 mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	cd /home/DesktopFer/MMDT/build/mmdt_rat20 && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /mnt/c/TunnelWSL/MMDT/build/mmdt_rat20 && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend:
-	cd /home/DesktopFer/MMDT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/DesktopFer/MMDT/src /home/DesktopFer/MMDT/src/mmdt_rat20 /home/DesktopFer/MMDT/build /home/DesktopFer/MMDT/build/mmdt_rat20 /home/DesktopFer/MMDT/build/mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/TunnelWSL/MMDT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/TunnelWSL/MMDT/src /mnt/c/TunnelWSL/MMDT/src/mmdt_rat20 /mnt/c/TunnelWSL/MMDT/build /mnt/c/TunnelWSL/MMDT/build/mmdt_rat20 /mnt/c/TunnelWSL/MMDT/build/mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mmdt_rat20/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
 

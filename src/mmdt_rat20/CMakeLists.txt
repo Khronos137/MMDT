@@ -19,6 +19,10 @@ include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE
 # For model_mass_plugin plugin
 # add_library(model_mass_plugin plugins/model_mass.cc)
 # target_link_libraries(model_mass_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
+add_library(contact SHARED plugins/ContactPlugin.cc)
+target_link_libraries(contact ${GAZEBO_LIBRARIES})
 
 catkin_package(
 	DEPENDS

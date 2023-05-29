@@ -27,7 +27,7 @@
     <parent link="world"/>
     <child link="esferaX_link"/>
     <axis xyz="1 0 0" />
-    <limit effort="1000.0" lower="-2" upper="10" velocity="0.5"/>
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <dynamics damping="1.0" friction="0.0"/>
   </joint>
@@ -36,7 +36,7 @@
     <parent link="esferaX_link"/>
     <child link="esferaY_link"/>
     <axis xyz="0 1 0" />
-    <limit effort="1000.0" lower="-2" upper="10" velocity="0.5"/>
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <dynamics damping="1.0" friction="0.0"/>
   </joint>
@@ -45,12 +45,12 @@
     <parent link="esferaY_link"/>
     <child link="esferaZ_link"/>
     <axis xyz="0 0 1" />
-    <limit effort="1000.0" lower="-2" upper="10" velocity="0.5"/>
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <dynamics damping="1.0" friction="0.0"/>
   </joint>
 
-<!-- AQUI SE DEFINE LAS CARACTERISTICAS FISICAS DE LA ESFERITA-->>
+<!-- AQUI SE DEFINE LAS CARACTERISTICAS FISICAS DE LA ESFERITA-->
   <link name="esferaX_link">
     <gravity>0</gravity>
     <visual>
