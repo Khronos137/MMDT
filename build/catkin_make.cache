@@ -1,2 +1,0 @@
-mmdt_rat20
--DCATKIN_DEVEL_PREFIX=/mnt/c/TunnelWSL/MMDT/devel -DCMAKE_INSTALL_PREFIX=/mnt/c/TunnelWSL/MMDT/install -G Unix Makefiles
