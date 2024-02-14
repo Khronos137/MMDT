@@ -3,4 +3,4 @@
 # type: "position_controllers/JointPositionController"
 type: "effort_controllers/JointPositionController"
 joint: latitaY_extension
-pid: {p: 100.0, i: 10.0, d: 0.0}
+pid: {p: 200.0, i: 10.0, d: 0.0}

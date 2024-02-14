@@ -501,7 +501,7 @@
     <axis
       xyz="0 0 1" />
     <!-- <limit velocity="6.5" effort="1000" lower="${-pi*0.5}" upper="${pi*0.5}" /> -->
-    <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+    <limit velocity="6.5" effort="1000" lower="-0.8" upper="0.8" />
     <dynamics damping="80"/>
   </joint>
 
@@ -541,7 +541,7 @@
     <axis xyz="1 0 0"/>
     <!-- <limit velocity="6.5" effort="1000" lower="${-pi}" upper="${pi}" /> -->
     <!-- <limit velocity="6.5" effort="1000" lower="-0.3" upper="0.3" /> -->
-    <limit velocity="6.5" effort="1000" lower="0.0" upper="0.3" />
+    <limit velocity="6.5" effort="1000" lower="0.0" upper="0.8" />
     <dynamics damping="80"/>
   </joint>
 
@@ -594,7 +594,8 @@
     <child link="link2_manipDer"/>
     <origin rpy="0 0 0" xyz="0.0 0.0 0.126"/>
     <axis xyz="0 0 1"/>
-    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/> -->
+    <limit effort="1000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <dynamics damping="80"/>
   </joint>
   <transmission name="tran1_manipDer">
@@ -678,7 +679,9 @@
     <child link="link4_manipDer"/>
     <origin rpy="0 0 0" xyz="0.03000 -0.01150 0.26400"/>
     <axis xyz="0 1 0"/>
-    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/> -->
+    <limit effort="1000" lower="-1.570796327" upper="2.35" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-3.14" upper="3.14" velocity="6.5"/> -->
     <dynamics damping="80"/>
   </joint>
   <transmission name="tran3_manipDer">
@@ -720,7 +723,8 @@
     <child link="link5_manipDer"/>
     <origin rpy="0 0 0" xyz="0.19500 -0.05750 0.03000"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/> -->
+    <limit effort="1000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <dynamics damping="80"/>
   </joint>
   <transmission name="tran4_manipDer">
@@ -880,7 +884,8 @@
     <child link="link2_manipIzq"/>
     <origin rpy="0 0 0" xyz="0.0 0.0 0.126"/>
     <axis xyz="0 0 1"/>
-    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/> -->
+    <limit effort="1000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <dynamics damping="80"/>
   </joint>
   <transmission name="tran1_manipIzq">
@@ -964,7 +969,9 @@
     <child link="link4_manipIzq"/>
     <origin rpy="0 0 0" xyz="0.03000 -0.01150 0.26400"/>
     <axis xyz="0 1 0"/>
-    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/> --> 
+    <limit effort="1000" lower="-1.570796327" upper="2.35" velocity="6.5"/>
+    
     <dynamics damping="80"/>
   </joint>
   <transmission name="tran3_manipIzq">
@@ -1006,7 +1013,8 @@
     <child link="link5_manipIzq"/>
     <origin rpy="0 0 0" xyz="0.19500 -0.05750 0.03000"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/>
+    <!-- <limit effort="1000" lower="-1.570796327" upper="1.570796327" velocity="6.5"/> -->
+    <limit effort="1000" lower="-3.14" upper="3.14" velocity="6.5"/>
     <dynamics damping="80"/>
   </joint>
   <transmission name="tran4_manipIzq">
@@ -1251,40 +1259,40 @@
 
 
   <gazebo reference="cameraTopKin_link">
-    <material value="Gazebo/Green"/>
+    <material value="Gazebo/Gold"/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="cameraTop_link">
-    <material value="Gazebo/Green"/>
+    <material value="Gazebo/BlueTransparent"/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="chasis">
-    <material value="Gazebo/Gold "/>
+    <material value="Gazebo/FlatBlack "/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="torso">
-    <material value="Gazebo/Gold "/>
+    <material value="Gazebo/DarkGrey"/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="baseTorso">
-    <material value="Gazebo/DarkGrey"/>
+    <material value="Gazebo/Grey"/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="link1_manipDer">
-    <material value="Gazebo/Gold"/>
+    <material value="Gazebo/DarkGrey"/>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link2_manipDer">
-    <material value="Gazebo/DarkGrey"/>
+    <material value="Gazebo/Grey "/>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link3_manipDer">
-    <material value="Gazebo/DarkGrey"/>
+    <material value="Gazebo/DarkGrey "/>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link4_manipDer">
@@ -1292,7 +1300,7 @@
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link5_manipDer">
-    <material value="Gazebo/DarkGrey"/>
+    <material value="Gazebo/Grey "/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
@@ -1307,12 +1315,12 @@
   </gazebo>
 
   <gazebo reference="link1_manipIzq">
-    <material value="Gazebo/Gold"/>
+    <material value="Gazebo/DarkGrey"/>
     <selfCollide>true</selfCollide>
   </gazebo>
   
   <gazebo reference="link2_manipIzq">
-    <material value="Gazebo/DarkGrey"/>
+    <material value="Gazebo/Grey"/>
     <selfCollide>true</selfCollide>
   </gazebo>
 
@@ -1327,7 +1335,7 @@
   </gazebo>
 
   <gazebo reference="link5_manipIzq">
-    <material value="Gazebo/DarkGrey"/>
+    <material value="Gazebo/Grey"/>
     <selfCollide>true</selfCollide>
   </gazebo>
 

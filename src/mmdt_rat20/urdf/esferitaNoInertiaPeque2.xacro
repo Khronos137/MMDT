@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<robot name="esferita" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="pi" value="3.1415" />
+  <xacro:property name="polelen" value="1.2" />
+  <xacro:property name="width" value="0.02" />
+  <xacro:property name="bodylen" value="0.06" />
+  <xacro:property name="radio" value="0.022" />
+
+<!-- DEFINICIONES INICIALES -->
+  <material name="blue">
+    <color rgba="0 0 0.8 0.1"/>
+  </material>
+
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+
+<!-- CONSTRUCCION DE ESFERAS PARA CONTROLAR LA TERCERA EN TODAS LAS POSICIONES -->
+
+  <link name="world">
+  </link>
+
+  <joint name="esferaX_extension2" type="prismatic">
+    <parent link="world"/>
+    <child link="esferaX_link"/>
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+  <joint name="esferaY_extension2" type="prismatic">
+    <parent link="esferaX_link"/>
+    <child link="esferaY_link"/>
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+  <joint name="esferaZ_extension2" type="prismatic">
+    <parent link="esferaY_link"/>
+    <child link="esferaZ_link"/>
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-100" upper="100" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <dynamics damping="1.0" friction="0.0"/>
+  </joint>
+
+<!-- AQUI SE DEFINE LAS CARACTERISTICAS FISICAS DE LA ESFERITA-->
+  <link name="esferaX_link">
+    <gravity>0</gravity>
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+    </visual>
+    <!-- <collision>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <origin xyz="${polelen/2} 0 0" rpy="0 ${pi/2} 0 "/>
+    </collision> -->
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <link name="esferaY_link">
+    <gravity>0</gravity>
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+    </visual>
+    <!-- <collision>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <origin xyz="${polelen/2} 0 0" rpy="0 ${pi/2} 0 "/>
+    </collision> -->
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <link name="esferaZ_link">
+    <gravity>0</gravity>
+    <visual>
+      <geometry>
+        <sphere radius="${radio}"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+    </visual>
+    <!-- <collision>
+      <geometry>
+        <sphere radius="0.3"/>
+      </geometry>
+      <origin xyz="${polelen/2} 0 0" rpy="0 ${pi/2} 0 "/>
+    </collision> -->
+    <xacro:default_inertial mass="0.01"/>
+  </link>
+
+  <transmission name="gripper_extension_transX" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorX">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="esferaX_extension2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <transmission name="gripper_extension_transY" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorY">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="esferaY_extension2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <transmission name="gripper_extension_transZ" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motorZ">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="esferaZ_extension2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission> 
+
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- <robotNamespace>/esfera</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="esferaZ_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <!-- <material>Gazebo/Red</material> -->
+    <material>Gazebo/BlueTransparent</material>
+  </gazebo>
+
+</robot>

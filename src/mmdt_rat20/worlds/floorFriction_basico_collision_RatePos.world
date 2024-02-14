@@ -92,7 +92,7 @@
 
 <!-- PAREDES Y PUERTITA -->
 
-<model name='grey_wallFront'>
+<!-- <model name='grey_wallFront'>
       <static>1</static>
       <link name='link'>
         <pose>0 0 0 0 -0 0</pose>
@@ -125,9 +125,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://grey_wall/materials/scripts</uri>
-              <uri>model://grey_wall/materials/textures</uri>
-              <name>vrc/grey_wall</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Bricks</name>
             </script>
           </material>
         </visual>
@@ -145,9 +144,9 @@
         <kinematic>0</kinematic>
       </link>
       <pose>0 0 0 0 0 0</pose>
-    </model>
+    </model> -->
 
-    <model name='grey_wallTras'>
+    <!-- <model name='grey_wallTras'>
       <static>1</static>
       <link name='link'>
         <pose>0 0 0 0 -0 0</pose>
@@ -180,9 +179,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://grey_wall/materials/scripts</uri>
-              <uri>model://grey_wall/materials/textures</uri>
-              <name>vrc/grey_wall</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Bricks</name>
             </script>
           </material>
         </visual>
@@ -200,7 +198,7 @@
         <kinematic>0</kinematic>
       </link>
       <pose>0 0 0 0 -0 0</pose>
-    </model>
+    </model> -->
 
 
     
@@ -237,7 +235,7 @@
       <wall_time>1681137364 884300972</wall_time>
       <iterations>1787652</iterations>
 
-      <model name='grey_wallTras'>
+      <!-- <model name='grey_wallTras'>
         <pose>0.0 0.0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -257,7 +255,7 @@
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
-      </model>
+      </model> -->
 
       <!-- <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>

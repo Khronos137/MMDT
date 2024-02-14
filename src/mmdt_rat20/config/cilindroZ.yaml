@@ -1,4 +1,4 @@
-# esfera_ns:
+# cilindro:
 #   r2d2_gripper_controller:
 # type: "position_controllers/JointPositionController"
 type: "effort_controllers/JointPositionController"

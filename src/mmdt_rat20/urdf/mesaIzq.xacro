@@ -3,6 +3,7 @@
   <xacro:property name="pi" value="3.1415" />
   <xacro:property name="width" value="0.02" />
   <xacro:property name="radio" value="0.02" />
+  <xacro:property name="mass" value="1.0" />
   
   <!-- <xacro:include filename="$(find mmdt_rat20)/urdf/materials.xacro" /> -->
 
@@ -41,15 +42,16 @@
       </inertia>
       <pose>0 0 0 0 -0 0</pose>
     </inertial> -->
-    <collision name='collisionM'>
+    <!-- <collision name='collisionMI'> -->
+    <!-- <collision>
       <geometry>
-        <cylinder radius="1.5" length="0.05"/>
+        <cylinder radius="1.5" length="0.01"/>
       </geometry>
       <max_contacts>10</max_contacts>
       <surface>
         <contact>
           <ode/>
-        </contact>s
+        </contact>
         <bounce/>
         <friction>
           <torsional>
@@ -58,11 +60,12 @@
           <ode/>
         </friction>
       </surface>
-    </collision>
+    </collision> -->
+    <!-- <visual name='visual'> -->
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0 "/>
       <geometry>
-        <cylinder radius="1.5" length="0.05"/>
+        <cylinder radius="1.5" length="0.01"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0 "/>
       <!-- <material>
@@ -76,6 +79,7 @@
     <enable_wind>0</enable_wind>
     <kinematic>0</kinematic>
     <xacro:default_inertial mass="0.01"/>
+    <!-- <static>1</static> -->
   </link>
 
   <transmission name="gripper_extension_transZ" type="SimpleTransmission">
@@ -85,16 +89,38 @@
     </actuator>
     <joint name="cilindroZ_extension">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
     </joint>
   </transmission> 
 
+    <!-- <transmission name="tran6_manipIzq">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="manipIzq_joint6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6_manipIzq">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> -->
+
   <!-- Gazebo plugin for ROS Control -->
   <gazebo>
+    <!-- <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin> -->
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <!-- <robotNamespace>/cilindro</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+      <!-- <robotNamespace>/cilindro</robotNamespace> -->
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
     </plugin>
-  </gazebo>
+
+    <!-- <sensor name='my_contact' type='contact'>
+      <plugin name="my_plugin" filename="libcontact.so"/>
+      <contact>
+        <collision>collisionMI</collision>
+      </contact>
+      <update_rate>20</update_rate>
+    </sensor>-->
+  </gazebo> 
 
 <!-- **** Informacion de texturas:
 Aqui se pueden aniadir texturas personalizadas directamente, dado que en el 
@@ -110,17 +136,23 @@ Ahi solo se llama al material:
   <gazebo reference="cilindroZ_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <material>Gazebo/DarkGrey</material>
+    <material>Gazebo/Gold</material>
+    <!-- <material value="Gazebo/BlueTransparent"/> -->
+
     <!-- <material>Table/Marble_Lightmap</material> -->
     <!-- <material>mmdt/pisoHierba</material>       -->
 
-    <sensor name='my_contact' type='contact'>
-      <plugin name="my_plugin" filename="libcontact.so"/>
+    <!-- <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin> -->
+
+    <!-- <sensor name='my_contactI' type='contact'>
+      <always_on>true</always_on>
+      <plugin name="my_pluginI" filename="libcontact.so"/>
       <contact>
-        <collision>collisionM</collision>
+        <collision>collisionMI</collision>
       </contact>
-      <update_rate> 20 </update_rate>
-    </sensor>
+      <update_rate>20</update_rate>
+    </sensor> -->
 
   </gazebo>
 

@@ -2,5 +2,5 @@
 #   r2d2_gripper_controller:
 # type: "position_controllers/JointPositionController"
 type: "effort_controllers/JointPositionController"
-joint: latitaY_extension
-pid: {p: 200.0, i: 10.0, d: 0.0}
+joint: esferaY_extension2
+pid: {p: 100.0, i: 10.0, d: 0.0}

@@ -2,7 +2,7 @@
 <!-- <?xml version="1.0" ?> -->
 <launch>
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
-  <arg name="paused" default="true"/>
+  <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
@@ -11,14 +11,13 @@
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!-- <arg name="world_name" value="$(find mmdt_rat20)/worlds/empty.world"/> -->
-    <arg name="world_name" value="$(find mmdt_rat20)/worlds/floorFriction_basico_collision.world"/>
+    <arg name="world_name" value="$(find mmdt_rat20)/worlds/floorFriction_basico_collision_RatePos.world"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="headless" value="$(arg headless)"/>
   </include>
-
 
   <group>
     <!-- Load the URDF into the ROS Parameter Server -->
@@ -27,7 +26,7 @@
     <!-- <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
           args="-R -1.57 -Y 3.1416 -x -0.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/> -->
       <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
-          args="-R -1.57 -Y 3.1416 -x -6.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/>
+          args="-R -1.57 -Y 3.1416 -x -3.077 -z 0.3 -urdf -model mmdt_rat20 -param robot_description"/>
 
     <!-- ros_control robotis manipulator launch file -->
     <include file="$(find mmdt_rat20)/launch/effortPlatf_PosMMDT_controller.launch" />
@@ -62,41 +61,6 @@
             esferaZ_controller"/> 
   </group>
 
-  <group ns= "mesaDer">
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(find mmdt_rat20)/urdf/mesaDer.xacro'" />
-    <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisherMesaDer">
-      <param name="publish_frequency" type="double" value="100.0" />
-      <param name="tf_prefix" value="mesaDer_p" />
-    </node>
-    
-    <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawnerMesaDer" respawn="false" output="screen"
-        args="-x 3.0 -y -5.0 -z 0.1 -urdf -model mesaDer -param robot_description" />
-
-    <rosparam command="load"
-              file="$(find mmdt_rat20)/config/cilindroZ.yaml"
-              ns="cilindroDZ_controller" />
-
-    <node name="cilindroD_controller_spawner" pkg="controller_manager" type="spawner"
-      args="cilindroDZ_controller"/> 
-  </group>
-
-  <group ns= "mesaIzq">
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(find mmdt_rat20)/urdf/mesaIzq.xacro'" />
-    <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisherMesaIzq">
-      <param name="publish_frequency" type="double" value="100.0" />
-      <param name="tf_prefix" value="mesaIzq_p" />
-    </node>
-    
-    <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawnerMesaIzq" respawn="false" output="screen"
-        args="-x -3.0 -y 5.0 -z 0.1 -urdf -model mesaIzq -param robot_description" />
-
-    <rosparam command="load"
-              file="$(find mmdt_rat20)/config/cilindro2Z.yaml"
-              ns="cilindroIZ_controller" />
-
-    <node name="cilindro_controller_spawner" pkg="controller_manager" type="spawner"
-      args="cilindroIZ_controller"/> 
-  </group>
 
   <group ns= "latitaCerveza">
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find mmdt_rat20)/urdf/latitaCerveza.xacro'" />

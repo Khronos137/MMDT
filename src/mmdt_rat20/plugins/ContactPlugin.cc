@@ -141,10 +141,12 @@ void ContactPlugin::OnUpdate()
   if(colisiones>0){
     std::cout << "Cantidad de colisiones: "<< contacts.contact_size() << "\n";
   }
-
+  
   msg.data = colisiones;
   this->chatter_pub.publish(msg);
   ros::spinOnce();
+  ros::Rate loop_rate(5);
+  loop_rate.sleep();
   // this->loop_rate.sleep();
 
 //  *************** FIN - PARTE DE ROS ******************

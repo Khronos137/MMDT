@@ -43,7 +43,7 @@
     </inertial> -->
     <!-- <collision name='collision'>
       <geometry>
-        <cylinder radius="1.5" length="0.02"/>
+        <cylinder radius="1.5" length="0.01"/>
       </geometry>
       <max_contacts>10</max_contacts>
       <surface>
@@ -62,7 +62,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0 "/>
       <geometry>
-        <cylinder radius="1.5" length="0.05"/>
+        <cylinder radius="1.5" length="0.01"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0 "/>
       <!-- <material>
@@ -110,7 +110,7 @@ Ahi solo se llama al material:
   <gazebo reference="cilindroZ_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <material>Gazebo/DarkGrey</material>
+    <material>Gazebo/Gold</material>
     <!-- <material>Table/Marble_Lightmap</material> -->
     <!-- <material>mmdt/pisoHierba</material>       -->
   </gazebo>

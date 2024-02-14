@@ -9,29 +9,29 @@ mmdt_rat20:
   joint1_manipDer_position:
     type: effort_controllers/JointPositionController
     joint: manipDer_joint1
-    pid: {p: 6000.0, i: 0.1, d: 4.0}
+    pid: {p: 15000.0, i: 0.1, d: 300.0}
 
   joint2_manipDer_position:
     type: effort_controllers/JointPositionController
     joint: manipDer_joint2
-    pid: {p: 6000.0, i: 0.1, d: 4.0}
+    pid: {p: 10000.0, i: 0.1, d: 500.0}
 
   joint3_manipDer_position:
     type: effort_controllers/JointPositionController
     joint: manipDer_joint3
-    pid: {p: 6000.0, i: 0.1, d: 4.0}
+    pid: {p: 6000.0, i: 0.1, d: 400.0}
 
   joint4_manipDer_position:
     type: effort_controllers/JointPositionController
     joint: manipDer_joint4
-    pid: {p: 6000.0, i: 0.1, d: 4.0}
+    pid: {p: 6000.0, i: 0.1, d: 400.0}
 
   joint5_manipDer_position:
     type: effort_controllers/JointPositionController
     joint: manipDer_joint5
-    pid: {p: 6000.0, i: 0.1, d: 4.0}
+    pid: {p: 6000.0, i: 0.1, d: 400.0}
 
   joint6_manipDer_position:
     type: effort_controllers/JointPositionController
     joint: manipDer_joint6
-    pid: {p: 6000.0, i: 0.1, d: 4.0}
+    pid: {p: 6000.0, i: 0.1, d: 400.0}
